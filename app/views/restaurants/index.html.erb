@@ -1,0 +1,19 @@
+<h1>Restaurants</h1>
+
+<div class="row">
+  <% @restaurants.each do |restaurant| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= link_to image_tag(restaurant.restaurant_image.thumb.url), restaurant.restaurant_image.detail.url %>
+        <div class="caption">
+          <h3><%= restaurant.name %></h3>
+          <p data-name='<%= restaurant.name %>' data-latitude='<%= restaurant.latitude %>' data-longitude='<%= restaurant.longitude %>'>
+            <%= link_to restaurant.name, restaurant_path(restaurant), class: "btn btn-primary" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

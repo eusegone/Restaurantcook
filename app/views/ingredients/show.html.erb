@@ -1,0 +1,15 @@
+<p id="notice"></p>
+
+<p>
+  <%= @ingredient.name %>
+</p>
+
+<div class= ingredient>
+<p>
+  <%= link_to image_tag(@ingredient.ingredient_image.thumb.url), @ingredient.ingredient_image.detail.url %>
+</p>
+</div>
+
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

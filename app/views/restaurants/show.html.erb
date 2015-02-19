@@ -1,0 +1,36 @@
+<div class="profile">
+
+  <h1><%= @restaurant.name %></h1>
+
+  <p>
+    <%= link_to image_tag(@restaurant.restaurant_image.thumb.url), @restaurant.restaurant_image.detail.url %>
+  </p>
+
+  <p>
+    <%= @restaurant.description %>
+  </p>
+
+  <p>
+    <strong>Postcode:</strong>
+    <%= @restaurant.postcode %>
+  </p>
+
+  <span id="latitude">
+    <%= @restaurant.latitude %>
+  </span>
+
+  <span id="longitude">
+    <%= @restaurant.longitude %>
+  </span>
+
+</div>
+
+<div id="restaurants-map-canvas"></div>
+
+<div class="row">
+  <%= render @recipes %>
+</div>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %> |
+<%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to "Add Recipe", new_restaurant_recipe_path(@restaurant) %>

@@ -1,0 +1,13 @@
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail ingredient">
+    <%= link_to image_tag(ingredient.ingredient_image.url), ingredient %>
+    <div class="caption">
+      <h3><%= ingredient.name %></h3>
+      <p>
+        <%= link_to "View", ingredient, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_ingredient_path(ingredient) , class: "btn btn-primary"  %>
+        <%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+      </p>
+    </div>
+  </div>
+</div>
