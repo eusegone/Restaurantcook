@@ -15,7 +15,7 @@ function initialize() {
       map.setZoom(16);
 
       var markerOptions = {
-        position: { 
+        position: {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         }
@@ -23,7 +23,6 @@ function initialize() {
 
       var marker = new google.maps.Marker(markerOptions);
       marker.setMap(map)
-
     });
   }
 
@@ -34,33 +33,32 @@ function initialize() {
       var latitude = parseFloat(restaurant.latitude);
       var longitude = parseFloat(restaurant.longitude);
       var markerOptions = {
-        position: { 
-          lat: latitude, 
-          lng: longitude 
+        position: {
+          lat: latitude,
+          lng: longitude
         }
       };
       var marker = new google.maps.Marker(markerOptions);
       marker.setMap(map);
     });
-  };
+  }
 
   function ajaxFail(data) {
     console.log('failed restaurants ajax lookup: ', data);
-  };
+  }
 
   function addRestaurants() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
 
-        $.get('/restaurants/near', 
-          { 
+        $.get('/restaurants/near',
+          {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
-            radius: 5 
+            radius: 5
           })
         .success(ajaxSuccess)
         .error(ajaxFail);
-        
       });
     }
   }
@@ -71,8 +69,8 @@ function initialize() {
 
 $(document).ready(function() {
 
-  if ($('#users-map-canvas').length > 0) { 
+  if ($('#users-map-canvas').length > 0) {
     initialize();
     
-  };
+  }
 });

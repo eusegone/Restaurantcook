@@ -2,7 +2,7 @@ var cookMaps = cookMaps || {};
 
 $(document).ready(function() {
    $('.carousel').carousel({
-       interval: 3000
+       interval: 3800
    });
 
   var currentLatitude = parseFloat($('#latitude').text());
@@ -12,13 +12,13 @@ $(document).ready(function() {
   cookMaps.initialize = function() {
   /*************
   MAP:
-  **************/ 
+  **************/
   var mapOptions = {
 
-    center: { 
-      lat:  currentLatitude, 
+    center: {
+      lat:  currentLatitude,
       lng: currentLongitude
-    }, 
+    },
 
     zoom: 14
   };
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
   /*************
   MARKER:
-  **************/   
+  **************/
 
     // var markerOptions = {
     //   position: { 
@@ -43,11 +43,11 @@ $(document).ready(function() {
 
   /*************
   NEAR:
-  **************/  
+  **************/
 
-    $.get('/restaurants/near', 
-      { lat: currentLatitude, 
-        lng: currentLongitude, 
+    $.get('/restaurants/near',
+      { lat: currentLatitude,
+        lng: currentLongitude,
         radius: 5 })
     .success(cookMaps.ajaxSuccess)
     .error(cookMaps.ajaxFail);
