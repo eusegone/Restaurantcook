@@ -1,28 +1,10 @@
-== README
+Title; Restaurant Recipe,
+Created by; Antonio E Goncalves
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Using Ruby, Javascript, HTML5, Bootstrap and more.
 
-Things you may want to cover:
+Purpose of app;
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The idea is to create an app that allows the user to log in and find one self using google maps, search for restaurants in the vicinity 
+and look at the recipes that the restaurant registered have in the menu.
+Once the user finds the recipe it's looking for, try to cook it at home and find the chef inside.
